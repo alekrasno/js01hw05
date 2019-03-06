@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+    <title>Добавление текста в элементы списка</title>
+    <style>
+		body {
+			width: 30%;
+			margin: 100px auto;
+		}
+			
+		
+	</style>
+  </head> 
+  <body>
+	  	<h2>Заголовок</h2>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	  	
+   
+    	<script type="text/javascript">
+			var doc = document;
+			var list = doc.querySelector('ul');
+			var oldListItems = list.getElementsByTagName('li');
+			var lisQuant = oldListItems.length;
+			for (i = 0; i <= lisQuant - 1; i++)	{
+				//console.log('i = ' + i);
+				//console.log(oldListItems[i]);				
+				var newlistItem = doc.createElement('li');
+				newlistItem.innerText = ('list '+ (i + 1));
+				//console.log (newlistItem);
+				oldListItems[i].innerText = (newlistItem.innerText);
+			}
+			
+		</script>
+  </body>
+  
+</html> 
