@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+    <title>Калькулятор</title>
+    <style>
+		
+		body {
+			width: 30%;
+			margin: 100px auto;
+		}			
+		
+		input, button {
+			width: 30px;
+			height: 20px;
+			text-align: center;
+		}
+		
+		p {
+			margin-top: 20px;	
+			margin-left: 25px;
+			line-height: 2em;
+		}
+		
+		span {
+			font-size: 1.5em;
+		}
+		
+	</style>
+  </head> 
+  <body>
+	  	<input type="text" name='a'>
+	  	<span>?</span>
+	  	<input type="text" name='b'>
+	  	<span>=</span>
+	  	<span id='c'></span>
+	  	<p>
+			<button id='plu' name='act' value="+">+</button><br>
+			<button id='min' name='act' value="-">-</button><br>
+			<button id='mul' name='act' value="*">*</button><br>
+			<button id='div' name='act' value="/">/</button>
+	  	</p>
+   
+    	<script type="text/javascript">
+			
+			var doc = document;
+			var click = function()	{
+				let a = doc.getElementsByName('a').value;
+				console.log('a = ' + a);
+				let b = doc.getElementsByName('b').value;
+				console.log('b = ' + b);
+				let act = doc.getElementsByName('act').value;
+				console.log('Действие = ' + act);
+				//console.log(a, b, act);
+				switch(act) {
+					case '+'	:
+						c = a + b;
+						break;
+					case '-'	:
+						c = a - b;
+						break;
+					case '*'	:
+						c = a * b;
+						break;	
+					case '/'	:
+						c = a / b;
+						break;	
+					console.log(c);
+				}				
+				return c;
+			};
+			var b = doc.getElementsByTagName('button');
+			console.log (b);
+			
+			if (b.onclick) { 
+				console.log('Кнопка нажата');
+				click();
+			}
+			
+		</script>
+  </body>
+  
+</html> 
