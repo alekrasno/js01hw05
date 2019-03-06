@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+    <title>Замена тэга</title>
+    <style>
+		body {
+			width: 100%;
+			margin: 100px auto;
+			text-align: center;					
+		}
+		
+		b {
+			display: block;
+		}
+		
+		button {
+			margin-top: 20px;
+			width: 70px;
+			height: 25px;
+		}
+			
+		
+	</style>
+  </head> 
+  <body>
+	  	<b id=txt>Hello!</b>
+	  	<button id=btn></button>
+	  	
+   
+    	<script type="text/javascript">
+			var doc = document;
+			var btn = doc.querySelector('#btn');
+			var txt = doc.querySelector('#txt');
+			var txtTag = txt.tagName;
+			console.log(txt);
+			
+			var btnOnclick = function(x, y)	{
+					btn.onclick = function()	{
+						let parent = x.parentNode;
+						console.log('Родитель ' + parent);
+						let xCopy = doc.createElement(y);
+						xCopy.textContent = x.textContent;
+						parent.replaceChild(xCopy, x);
+					}
+			};
+			
+			var h00 = txt.Tagname;	// Исходный тег изменяемого элемента
+			var h01 					// Целевой тег изменяемого элемента
+			h00 == 'h2' ? h01 = 'b' :	h01 = 'h2';
+
+// ==========================
+			
+			btnOnclick(txt, h01);
+			
+		</script>
+  </body>
+  
+</html> 
